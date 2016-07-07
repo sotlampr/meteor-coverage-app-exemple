@@ -17,7 +17,7 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
-  - npm install -g coffee-script@1.8.0 https://github.com/serut/spacejam/tarball/master coveralls  codecov.io
+  - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-coverage coveralls  codecov.io
 
 script:
     # Unit test using mocha
@@ -34,4 +34,3 @@ script:
   - cat lcov.info
     # Trying to use the new package.json and meteor run command
   - meteor npm run test-coverage-app-unit || true
-
