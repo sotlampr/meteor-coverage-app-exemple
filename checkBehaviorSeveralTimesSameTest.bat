@@ -1,0 +1,11 @@
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
+node ..\spacejam\bin\spacejam test --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage "out_coverage" --full-app > C:\log_spacejam.txt
