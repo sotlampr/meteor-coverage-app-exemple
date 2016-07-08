@@ -11,7 +11,7 @@ checkout:
     - git submodule update --init
 test:
   override:
-    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --coverage="out_coverage"
-    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --coverage="in_coverage|out_lcovonly"
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --coverage
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_coverage"
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="in_coverage|out_lcovonly"
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage
     - spacejam test-packages   --coverage
