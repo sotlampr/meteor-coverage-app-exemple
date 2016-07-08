@@ -17,7 +17,7 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
-  - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-coverage coveralls  codecov.io
+  - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4 coveralls  codecov.io
 
 script:
     # Unit test using mocha
