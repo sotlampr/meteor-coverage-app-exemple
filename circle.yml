@@ -4,14 +4,14 @@ machine:
 dependencies:
   override:
     - curl https://install.meteor.com | /bin/sh
-    - npm install -g coffee-script@1.8.0 https://github.com/serut/spacejam/tarball/master
+    - npm install -g coffee-script@1.8.0 https://github.com/serut/spacejam/tarball/windows-suppport-rc4
     - npm install
 checkout:
   post:
     - git submodule update --init
 test:
   override:
-    - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
-    - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
-    - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage
-    - spacejam test-packages   --loglevel debug --coverage
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --coverage="out_coverage"
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --coverage="in_coverage|out_lcovonly"
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --coverage
+    - spacejam test-packages   --coverage
