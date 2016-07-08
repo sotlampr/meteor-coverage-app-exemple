@@ -6,7 +6,7 @@
     "test-app": "meteor test --full-app --once --driver-package dispatch:mocha-phantomjs",
     "test-watch": "meteor test --driver-package practicalmeteor:mocha",
     "test-app-watch": "meteor test --full-app --driver-package practicalmeteor:mocha",
-    "test-coverage-app-unit": "spacejam test --coverage --driver-package=practicalmeteor:mocha-console-runner",
+    "test-coverage-app-unit": "spacejam test --coverage='out_lcovonly' --driver-package=practicalmeteor:mocha-console-runner",
     "test-coverage-app-full": "spacejam test --full-app --coverage --driver-package=practicalmeteor:mocha-console-runner",
     "test-coverage-packages": "spacejam test-packages --driver-package=test-in-console",
     "lint": "eslint .",

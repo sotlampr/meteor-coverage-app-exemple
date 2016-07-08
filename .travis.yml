@@ -21,22 +21,27 @@ before_install:
 
 script:
     # Unit test using mocha
-  - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_coverage"
   - cat lcov.info
 
     # Integration test using mocha
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="in_coverage|out_lcovonly"
   - cat lcov.info
+  - cat lcov.info | coveralls
+  - cat lcov.info | codecov
+
 
     # Package test using mocha
   - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+    # Wrong path
   - cat lcov.info
 
-  - cat lcov.info | coveralls
-  - cat lcov.info | codecov
     # Package test using tinytest
   - spacejam test-packages   --loglevel debug --coverage
-    # Package test using tinytest creates a coverage file with wrong path ?
+    # Wrong path
   - cat lcov.info
+
+
     # Trying to use the new package.json and meteor run command
-  - meteor npm run test-coverage-app-unit || true
+  - meteor npm run test-coverage-app-unit
+  - cat lcov.info
