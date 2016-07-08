@@ -22,7 +22,6 @@ before_install:
 script:
     # Unit test using mocha
   - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_coverage"
-  - cat lcov.info
 
     # Integration test using mocha
   - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="in_coverage|out_lcovonly"
