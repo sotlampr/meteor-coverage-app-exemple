@@ -35,6 +35,6 @@ lmieulet:meteor-coverage
 #or
 #phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:loglevel'].loglevel')
 #    http://localhost:4096/packages/practicalmeteor_mocha.js?hash=0c7bae1a756c9691267ec935a8d6a4e081df9cf6: 9
-practicalmeteor:mocha@2.4.5_5
-practicalmeteor:mocha-console-runner@0.2.3
+practicalmeteor:mocha@2.4.5_2
+practicalmeteor:mocha-console-runner@0.2.0
 practicalmeteor:chai
