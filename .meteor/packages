@@ -23,7 +23,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 
 lmieulet:meteor-coverage
 
-# If that can avoid errors like
+# Get on travis and circle errors like
 # I20160708-16:04:29.809(0)? registerSourceMap../web.browser/app/app.js
 # I20160708-16:04:29.810(0)? Add source map for file ../web.browser/app/app.js.map
 # I20160708-16:04:29.810(0)? registerSourceMap../web.browser/app/app.js
@@ -36,7 +36,5 @@ lmieulet:meteor-coverage
 #phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:loglevel'].loglevel')
 #    http://localhost:4096/packages/practicalmeteor_mocha.js?hash=0c7bae1a756c9691267ec935a8d6a4e081df9cf6: 9
 practicalmeteor:mocha@2.4.5_5
-practicalmeteor:chai@2.1.0_1
-practicalmeteor:sinon@1.14.1_2
-practicalmeteor:mocha-core@1.0.1
 practicalmeteor:mocha-console-runner@0.2.3
+practicalmeteor:chai
