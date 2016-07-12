@@ -19,8 +19,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-practicalmeteor:mocha-console-runner@0.2.3
-practicalmeteor:mocha@2.4.5_5
+
+
 lmieulet:meteor-coverage
 
 # If that can avoid errors like
@@ -32,8 +32,11 @@ lmieulet:meteor-coverage
 # or
 # phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:chai'].chai')
 #     http://localhost:4096/packages/practicalmeteor_sinon.js?hash=d51f09b72f5e645e87a6101ca90a5e06f108616d: 1
-
-practicalmeteor:mocha-core@1.0.1
-practicalmeteor:loglevel@1.2.0_2
+#or
+#phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:loglevel'].loglevel')
+#    http://localhost:4096/packages/practicalmeteor_mocha.js?hash=0c7bae1a756c9691267ec935a8d6a4e081df9cf6: 9
+practicalmeteor:mocha@2.4.5_5
 practicalmeteor:chai@2.1.0_1
 practicalmeteor:sinon@1.14.1_2
+practicalmeteor:mocha-core@1.0.1
+practicalmeteor:mocha-console-runner@0.2.3
