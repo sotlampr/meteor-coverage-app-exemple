@@ -28,6 +28,14 @@ script:
   - cat lcov.info
   - cat lcov.info | coveralls
   - cat lcov.info | codecov
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
 
 
     # Package test using mocha
@@ -36,7 +44,7 @@ script:
   - cat lcov.info
 
     # Package test using tinytest
-  - spacejam test-packages   --loglevel debug --coverage
+  - spacejam test-packages   --loglevel debug --coverage="out_lcovonly"
     # Wrong path
   - cat lcov.info
 
