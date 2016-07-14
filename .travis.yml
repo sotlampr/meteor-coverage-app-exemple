@@ -17,38 +17,61 @@ before_install:
   - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
 
   # Install spacejam
-  - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4 coveralls  codecov.io
+  - npm install -g https://github.com/practicalmeteor/spacejam/tarball/windows-suppport
 
 script:
-    # Unit test using mocha
-  - spacejam test            --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_coverage"
-
-    # Integration test using mocha
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="in_coverage|out_lcovonly"
-  - cat lcov.info
-  - cat lcov.info | coveralls
-  - cat lcov.info | codecov
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-  - spacejam test --full-app --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
+  - echo "BEGIN spacejam test"
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - echo "END spacejam test"
 
 
-    # Package test using mocha
-  - spacejam test-packages   --loglevel debug --driver-package practicalmeteor:mocha-console-runner --coverage="out_lcovonly"
-    # Wrong path
-  - cat lcov.info
+  - echo "BEGIN spacejam test --full-app"
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - echo "END spacejam test --full-app"
 
-    # Package test using tinytest
-  - spacejam test-packages   --loglevel debug --coverage="out_lcovonly"
-    # Wrong path
-  - cat lcov.info
 
+  - echo "BEGIN spacejam test-packages mocha"
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+  - echo "END spacejam test-packages mocha"
 
-    # Trying to use the new package.json and meteor run command
-  - meteor npm run test-coverage-app-unit
-  - cat lcov.info
+  - echo "BEGIN spacejam test-packages"
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - spacejam test-packages    --loglevel debug
+  - echo "END spacejam test-packages"

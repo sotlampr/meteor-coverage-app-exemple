@@ -21,20 +21,6 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 
 
-lmieulet:meteor-coverage
-
-# Get on travis and circle errors like
-# I20160708-16:04:29.809(0)? registerSourceMap../web.browser/app/app.js
-# I20160708-16:04:29.810(0)? Add source map for file ../web.browser/app/app.js.map
-# I20160708-16:04:29.810(0)? registerSourceMap../web.browser/app/app.js
-# phantomjs: Error: Cannot find module 'meteor/practicalmeteor:mocha/meteor/src/index.js'
-#     http://localhost:4096/packages/modules-runtime.js?hash=b7370236eeaf57e8f4ac703424bc831028392451: 439
-# or
-# phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:chai'].chai')
-#     http://localhost:4096/packages/practicalmeteor_sinon.js?hash=d51f09b72f5e645e87a6101ca90a5e06f108616d: 1
-#or
-#phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:loglevel'].loglevel')
-#    http://localhost:4096/packages/practicalmeteor_mocha.js?hash=0c7bae1a756c9691267ec935a8d6a4e081df9cf6: 9
-practicalmeteor:mocha@2.4.5_2
-practicalmeteor:mocha-console-runner@0.2.0
+practicalmeteor:mocha
+practicalmeteor:mocha-console-runner
 practicalmeteor:chai

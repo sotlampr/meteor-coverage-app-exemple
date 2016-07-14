@@ -1,26 +1,33 @@
-| Travis        | Circle CI  | Coveralls  | Codecov  |
-| ------------- |:-------------:|----------:|----------:|----------:|
-| [![Build Status](https://travis-ci.org/serut/meteor-coverage-app-exemple.svg?branch=master)](https://travis-ci.org/serut/meteor-coverage-app-exemple) | [![Circle CI](https://circleci.com/gh/serut/meteor-coverage-app-exemple.svg?style=svg)](https://circleci.com/gh/serut/meteor-coverage-app-exemple) | [![Coverage Status](https://coveralls.io/repos/github/serut/meteor-coverage-app-exemple/badge.svg?branch=master)](https://coveralls.io/github/serut/meteor-coverage-app-exemple?branch=master) | [![codecov](https://codecov.io/gh/serut/meteor-coverage-app-exemple/branch/master/graph/badge.svg)](https://codecov.io/gh/serut/meteor-coverage-app-exemple) |
+This is an example meteor app to show that `spacejam + mocha` is not reliable right now.
 
-#### Test package using tinytest
-`meteor test-packages`
-becomes
-`[coffee ]spacejam test-packages --driver-package=test-in-console`
-Dependency used but not required : test-in-console
+The circle.yml and .travis.yml executes 10 times the same test and sometimes there are dependencies injection error that crash the app, when the browser (phantomjs) opens the test page.  
 
-#### Test package using mocha
-`meteor test-packages --driver-package=practicalmeteor:mocha`
-becomes
-`[coffee ]spacejam test-packages --driver-package=practicalmeteor:mocha-console-runner`
-Require inside the Package.onTest block of the package: `api.use('practicalmeteor:mocha');`
+    # I20160708-16:04:29.809(0)? registerSourceMap../web.browser/app/app.js
+    # I20160708-16:04:29.810(0)? Add source map for file ../web.browser/app/app.js.map
+    # I20160708-16:04:29.810(0)? registerSourceMap../web.browser/app/app.js
+    # phantomjs: Error: Cannot find module 'meteor/practicalmeteor:mocha/meteor/src/index.js'
+    #     http://localhost:4096/packages/modules-runtime.js?hash=b7370236eeaf57e8f4ac703424bc831028392451: 439
+    # or
+    # phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:chai'].chai')
+    #     http://localhost:4096/packages/practicalmeteor_sinon.js?hash=d51f09b72f5e645e87a6101ca90a5e06f108616d: 1
+    # or
+    # phantomjs: TypeError: undefined is not an object (evaluating 'Package['practicalmeteor:loglevel'].loglevel')
+    #    http://localhost:4096/packages/practicalmeteor_mocha.js?hash=0c7bae1a756c9691267ec935a8d6a4e081df9cf6: 9
 
-#### Test app using mocha
-`meteor test  --driver-package=practicalmeteor:mocha`
-becomes
-`[coffee ]spacejam test  --driver-package=practicalmeteor:mocha-console-runner`
-Required : meteor add practicalmeteor:mocha practicalmeteor:mocha-console-runner
+See logs on https://travis-ci.org/serut/meteor-coverage-app-exemple/branches and https://circleci.com/gh/serut/meteor-coverage-app-exemple
+Good luck with that @practicalmeteor !!!
 
-#### Test full-app using mocha
-Add the --full-app flag to an app test
+This app contains
+- a meteor app v1.3.4.4
+- all packages updated to their last version except
+> $ meteor update --allow-incompatible-update  
+> The following top-level dependencies were not updated to the very latest version available:
+> * practicalmeteor:mocha 2.4.5_5 (2.4.5_6 is available)  
 
-See the .travis.yml for additional informations
+- use the lastest version of spacejam (using the tarball https://github.com/practicalmeteor/spacejam/tarball/windows-suppport)
+- an internal package of the app that uses tinytest and mocha
+- it covers these types of test:
+    - meteor test            --driver-package practicalmeteor:mocha-console-runner
+    - meteor test --full-app --driver-package practicalmeteor:mocha-console-runner
+    - meteor test-packages   --driver-package practicalmeteor:mocha-console-runner
+    - meteor test-packages

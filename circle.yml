@@ -4,41 +4,65 @@ machine:
 dependencies:
   override:
     - curl https://install.meteor.com | /bin/sh
-    - npm install -g https://github.com/serut/spacejam/tarball/windows-suppport-rc4
+    - npm install -g https://github.com/practicalmeteor/spacejam/tarball/windows-suppport
     - npm install
 checkout:
   post:
     - git submodule update --init
 test:
   override:
-    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_coverage"
-    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="in_coverage|out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug --coverage="out_lcovonly"
-    - cat lcov.info
-    - spacejam test-packages   --coverage="out_lcovonly"
-    - cat lcov.info
+    - echo "BEGIN spacejam test"
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test            --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - echo "END spacejam test"
+
+
+    - echo "BEGIN spacejam test --full-app"
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test --full-app --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - echo "END spacejam test --full-app"
+
+
+    - echo "BEGIN spacejam test-packages mocha"
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - spacejam test-packages   --driver-package practicalmeteor:mocha-console-runner --loglevel debug
+    - echo "END spacejam test-packages mocha"
+
+    - echo "BEGIN spacejam test-packages"
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - spacejam test-packages    --loglevel debug
+    - echo "END spacejam test-packages"
