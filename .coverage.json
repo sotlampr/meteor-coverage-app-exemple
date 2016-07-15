@@ -1,4 +1,5 @@
-"ignore": {
+{
+    "ignore": {
         "clientside": {
             "inapp": [
                 "/underscore.js",
