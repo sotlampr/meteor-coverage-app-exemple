@@ -21,7 +21,7 @@ autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 
 
-practicalmeteor:mocha@2.4.5_6
+practicalmeteor:mocha@2.4.5_5
 practicalmeteor:mocha-console-runner
 practicalmeteor:chai
 lmieulet:meteor-coverage@0.8.1

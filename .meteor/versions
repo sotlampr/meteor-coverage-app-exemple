@@ -35,9 +35,11 @@ insecure@1.0.7
 jquery@1.11.9
 launch-screen@1.0.12
 livedata@1.0.18
+lmieulet:meteor-coverage@0.8.1
 logging@1.0.14
 meteor@1.1.16
 meteor-base@1.0.4
+meteorhacks:picker@1.0.3
 minifier-css@1.1.13
 minifier-js@1.1.13
 minimongo@1.0.17
