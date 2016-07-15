@@ -56,7 +56,8 @@
                 "/global-imports.js",
                 "/lmieulet_meteor-coverage.js",
                 "/practicalmeteor_mocha.js",
-                "/practicalmeteor_loglevel.js"
+                "/practicalmeteor_loglevel.js",
+                "/practicalmeteor_sinon.js"
             ]
         }
     }
