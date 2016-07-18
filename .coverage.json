@@ -57,7 +57,9 @@
                 "/lmieulet_meteor-coverage.js",
                 "/practicalmeteor_mocha.js",
                 "/practicalmeteor_loglevel.js",
-                "/practicalmeteor_sinon.js"
+                "/practicalmeteor_sinon.js",
+                "/practicalmeteor_mocha-console-runner.js",
+                "/practicalmeteor_mocha-core.js"
             ]
         }
     }
